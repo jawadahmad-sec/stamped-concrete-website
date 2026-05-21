@@ -4,11 +4,23 @@
     box-sizing: border-box;
 }
 
+/* ========== ONLY TILE IMAGE BACKGROUND ========== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: #fdfbf7;
+    /* Tile image is the sole background – no colour overlay */
+    background: url('../images/gallery/work1.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* All content sections have a very light white transparency so text is readable,
+   but the tile image remains clearly visible behind them. */
+section, footer, .gallery-container, .counter-section,
+.customers-gallery-section, .current-projects, .double-counter {
+    background: rgba(255, 255, 255, 0.75);
+    position: relative;
+    z-index: 1;
 }
 
 /* Navigation */
@@ -20,6 +32,7 @@ nav {
     color: white;
     padding: 1rem 2rem;
     flex-wrap: wrap;
+    z-index: 10;
 }
 
 .logo {
@@ -45,25 +58,6 @@ nav a {
 
 nav a.active, nav a:hover {
     background: #c0842e;
-}
-
-/* Language Switch Button */
-.lang-btn {
-    background: #c0842e;
-    color: white;
-    border: none;
-    padding: 0.4rem 1.2rem;
-    border-radius: 20px;
-    font-size: 0.95rem;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
-    white-space: nowrap;
-    margin-right: 1rem;
-}
-
-.lang-btn:hover {
-    background: #a06d1a;
 }
 
 /* Hero */
@@ -111,7 +105,6 @@ nav a.active, nav a:hover {
 .services {
     padding: 3rem 2rem;
     text-align: center;
-    background: white;
     border-bottom: 3px solid #f5c542;
 }
 
@@ -148,7 +141,7 @@ nav a.active, nav a:hover {
 .cta {
     text-align: center;
     padding: 3rem 2rem;
-    background: #fdfbf7;
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .cta h2 {
@@ -157,7 +150,6 @@ nav a.active, nav a:hover {
     color: #1e293b;
 }
 
-/* CTA buttons row */
 .cta-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -192,7 +184,6 @@ footer {
     color: white;
     text-align: center;
     padding: 1.5rem 1rem;
-    direction: rtl;
 }
 
 footer a {
@@ -303,12 +294,12 @@ footer a {
     font-size: 1.2em;
 }
 
-/* Contact Page (shared) */
+/* Contact Page */
 .contact-form-section {
     max-width: 600px;
     margin: 2rem auto;
     padding: 2rem;
-    background: white;
+    background: rgba(255, 255, 255, 0.85);
     border-radius: 10px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     border-top: 4px solid #c0842e;
@@ -330,12 +321,11 @@ footer a {
     background: #128C7E;
 }
 
-/* Extra Links Section */
 .extra-links {
     max-width: 600px;
     margin: 2rem auto;
     padding: 2rem;
-    background: white;
+    background: rgba(255, 255, 255, 0.85);
     border-radius: 10px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     text-align: center;
@@ -387,53 +377,106 @@ footer a {
     background: #a06d1a;
 }
 
-/* ---------- LANGUAGE TOGGLE RULES ---------- */
-/* Hide English by default (Arabic shown) */
-.lang-en {
-    display: none;
+/* ========== CUSTOMERS PAGE DOUBLE COUNTER ========== */
+.double-counter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 1rem;
+    border-bottom: 3px solid #f5c542;
 }
 
-/* When HTML has class lang-en, show English and hide Arabic */
-html.lang-en .lang-ar {
-    display: none;
+.counter-card {
+    background: #1e293b;
+    color: #f5c542;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    min-width: 200px;
 }
-html.lang-en .lang-en {
-    display: inline;
-}
-/* For block elements that might be span, but need block display */
-html.lang-en h1 .lang-en,
-html.lang-en h2 .lang-en,
-html.lang-en p .lang-en,
-html.lang-en .btn .lang-en,
-html.lang-en .service-item .lang-en,
-html.lang-en label .lang-en {
-    display: inline;
-}
-/* Ensure hero title and similar large spans are block if needed */
-html.lang-en .hero h1 .lang-en,
-html.lang-en .hero p .lang-en {
+
+.counter-number {
+    font-size: 3rem;
+    font-weight: bold;
     display: block;
 }
 
-/* Direction handling */
-html[dir="rtl"] body {
-    direction: rtl;
-    text-align: right;
-}
-html[dir="ltr"] body {
-    direction: ltr;
-    text-align: left;
+.counter-label {
+    font-size: 1.1rem;
+    color: white;
+    margin-top: 0.3rem;
 }
 
-/* LTR specific fix for navigation layout */
-html[dir="ltr"] nav {
-    flex-direction: row;
-}
-html[dir="rtl"] nav {
-    flex-direction: row;
+.counter-note {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
-/* Responsive */
+.customers-gallery-section {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.customers-gallery-section h2 {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.customer-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 1rem;
+}
+
+.customer-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.customer-card:hover {
+    transform: translateY(-5px);
+}
+
+.customer-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.customer-card .work-name {
+    padding: 0.8rem;
+    text-align: center;
+    font-weight: bold;
+    background: #fdfbf7;
+    color: #1e293b;
+}
+
+/* ========== FADE-IN ANIMATION ========== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========== RESPONSIVE ========== */
 @media (max-width: 600px) {
     nav {
         flex-direction: column;
@@ -447,6 +490,10 @@ html[dir="rtl"] nav {
         font-size: 1.8rem;
     }
     .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .double-counter {
         flex-direction: column;
         align-items: center;
     }

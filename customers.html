@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عملائنا – أرضيات خرسانة مطبوعة | Our Customers</title>
+    <meta name="description" content="عدد العملاء الذين تعاملنا معهم – خدمات خرسانة مطبوعة في السعودية">
+    <meta property="og:title" content="عملائنا – أرضيات خرسانة مطبوعة">
+    <meta property="og:description" content="تعرف على عدد مشاريعنا وعملائنا">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">ديكورات الخرسانة</div>
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="gallery.html">معرض الأعمال</a></li>
+            <li><a href="customers.html" class="active">عملائنا</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero small-hero fade-in">
+        <h1>عملائنا</h1>
+        <p>ثقتكم هي سر نجاحنا</p>
+    </section>
+
+    <!-- Double counter section -->
+    <section class="double-counter fade-in">
+        <div class="counter-card">
+            <span class="counter-number" id="happyCustomers">0</span>
+            <span class="counter-label">عميل سعيد</span>
+        </div>
+        <div class="counter-card">
+            <span class="counter-number" id="currentProjects">0</span>
+            <span class="counter-label">مشروع قيد التنفيذ</span>
+        </div>
+    </section>
+
+    <p class="counter-note fade-in">بفضل الله ثم ثقتكم، هذه أرقامنا حتى الآن</p>
+
+    <!-- Previous Customers Gallery -->
+    <section class="customers-gallery-section fade-in">
+        <h2>عملاؤنا السابقون</h2>
+        <p style="margin-bottom:1rem; color:#555;">بعض من أعمالنا التي نفذناها لعملائنا</p>
+        <div class="customer-gallery" id="previousGallery"></div>
+    </section>
+
+    <footer>
+        <div class="footer-contact">📞 0590929980 – 0546563615</div>
+        <div class="social-links">
+            <a href="mailto:Ziaurrahmanzsdir5405@gmail.com">📧 البريد الإلكتروني</a>
+            <a href="https://youtube.com/@ziaurrahmandir9875?si=9WGgeaylaAGoXP9o" target="_blank">▶️ YouTube</a>
+            <a href="https://www.tiktok.com/@concrete.stumped?_r=1&_t=ZS-96AVyMabSJc" target="_blank">🎵 TikTok</a>
+            <a href="https://www.instagram.com/stamped_concrets_flooring?igsh=ZmpiemlpenpobGZy&utm_source=qr" target="_blank">📷 Instagram</a>
+            <a href="https://haraj.com.sa/shared-post/019e03a4-a156-7d0e-a157-987ded755cda/" target="_blank">🛒 حراج</a>
+            <a href="https://haraj.com.sa/@sbh_513?src=ios" target="_blank">📢 إعلاناتنا</a>
+            <a href="https://www.google.com/maps/place/24%C2%B037'01.4%22N+46%C2%B042'46.4%22E" target="_blank">📍 الموقع</a>
+        </div>
+        <p class="copyright">المملكة العربية السعودية | جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        // Random numbers below 400
+        const randomHappy = Math.floor(Math.random() * 201) + 200; // 200–400
+        const randomProjects = Math.floor(Math.random() * 101) + 100; // 100–200
+
+        function animateCounter(elementId, target) {
+            const el = document.getElementById(elementId);
+            let current = 0;
+            const step = Math.ceil(target / 80);
+            const interval = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    el.textContent = target;
+                    clearInterval(interval);
+                } else {
+                    el.textContent = current;
+                }
+            }, 20);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            animateCounter('happyCustomers', randomHappy);
+            animateCounter('currentProjects', randomProjects);
+
+            // Fade-in all sections
+            const fadeEls = document.querySelectorAll('.fade-in');
+            fadeEls.forEach((el, i) => {
+                setTimeout(() => el.classList.add('visible'), i * 150);
+            });
+        });
+
+        // Build previous gallery
+        const previousData = [
+            { src: "images/gallery/work1.jpeg", name: "صبة مروحة" },
+            { src: "images/gallery/work2.jpeg", name: "موزاييك" },
+            { src: "images/gallery/work3.jpeg", name: "صبة ترازو" },
+            { src: "images/gallery/work4.jpeg", name: "صبة مشطبة" },
+            { src: "images/gallery/work5.jpeg", name: "ريزن بوند" },
+            { src: "images/gallery/work6.jpeg", name: "خرسانة ملونة" },
+            { src: "images/gallery/work7.jpeg", name: "نقشة مميزة" },
+            { src: "images/gallery/work8.jpeg", name: "أشكال هندسية" },
+            { src: "images/gallery/work9.jpeg", name: "موزاييك فاخر" },
+            { src: "images/gallery/work10.jpeg", name: "تشطيب عصري" }
+        ];
+
+        const prevContainer = document.getElementById('previousGallery');
+        previousData.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'customer-card';
+            card.innerHTML = `<img src="${item.src}" alt="${item.name}" loading="lazy"><div class="work-name">${item.name}</div>`;
+            prevContainer.appendChild(card);
+        });
+    </script>
+</body>
+</html>

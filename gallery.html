@@ -8,68 +8,55 @@
     <meta name="keywords" content="معرض أعمال, صور خرسانة مطبوعة, ديكورات, صبة ترازو, موزاييك">
     <meta property="og:title" content="معرض الأعمال – أرضيات خرسانة مطبوعة">
     <meta property="og:description" content="شاهد أجمل تصاميم الخرسانة المطبوعة والملونة.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://your-site.netlify.app/gallery.html">
-    <meta property="og:image" content="https://your-site.netlify.app/images/og-gallery.jpg">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <nav>
-        <div class="logo">
-            <span class="lang-ar">ديكورات الخرسانة</span>
-            <span class="lang-en">Decorative Concrete</span>
-        </div>
+        <div class="logo">ديكورات الخرسانة</div>
         <ul>
-            <li><a href="index.html"><span class="lang-ar">الرئيسية</span><span class="lang-en">Home</span></a></li>
-            <li><a href="gallery.html" class="active"><span class="lang-ar">معرض الأعمال</span><span class="lang-en">Gallery</span></a></li>
-            <li><a href="contact.html"><span class="lang-ar">اتصل بنا</span><span class="lang-en">Contact</span></a></li>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="gallery.html" class="active">معرض الأعمال</a></li>
+            <li><a href="customers.html">عملائنا</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
-        <button id="lang-toggle" class="lang-btn">English</button>
     </nav>
 
-    <section class="hero small-hero">
-        <h1>
-            <span class="lang-ar">معرض أعمالنا</span>
-            <span class="lang-en">Our Work Gallery</span>
-        </h1>
-        <p>
-            <span class="lang-ar">أجمل ديكورات الخرسانة المطبوعة والملونة – شغل فعلي من تنفيذنا</span>
-            <span class="lang-en">The finest stamped & colored concrete – real projects by us</span>
-        </p>
+    <section class="hero small-hero fade-in">
+        <h1>معرض أعمالنا</h1>
+        <p>أجمل ديكورات الخرسانة المطبوعة والملونة – شغل فعلي من تنفيذنا</p>
     </section>
 
-    <div class="gallery-container" id="gallery"></div>
+    <div class="gallery-container fade-in" id="gallery"></div>
 
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
         <span class="close">&times;</span>
         <img class="lightbox-content" id="lightbox-img">
-        <div id="caption">
-            <span class="lang-ar"></span>
-            <span class="lang-en"></span>
-        </div>
+        <div id="caption"></div>
     </div>
 
     <footer>
-        <div class="footer-contact">
-            <span class="lang-ar">📞 0590929980 – 0546563615</span>
-            <span class="lang-en">📞 +966 59 092 9980 – +966 54 656 3615</span>
-        </div>
+        <div class="footer-contact">📞 0590929980 – 0546563615</div>
         <div class="social-links">
-            <a href="mailto:Ziaurrahmanzsdir5405@gmail.com">📧 <span class="lang-ar">البريد الإلكتروني</span><span class="lang-en">Email</span></a>
+            <a href="mailto:Ziaurrahmanzsdir5405@gmail.com">📧 البريد الإلكتروني</a>
             <a href="https://youtube.com/@ziaurrahmandir9875?si=9WGgeaylaAGoXP9o" target="_blank">▶️ YouTube</a>
             <a href="https://www.tiktok.com/@concrete.stumped?_r=1&_t=ZS-96AVyMabSJc" target="_blank">🎵 TikTok</a>
             <a href="https://www.instagram.com/stamped_concrets_flooring?igsh=ZmpiemlpenpobGZy&utm_source=qr" target="_blank">📷 Instagram</a>
-            <a href="https://haraj.com.sa/shared-post/019e03a4-a156-7d0e-a157-987ded755cda/" target="_blank">🛒 <span class="lang-ar">حراج</span><span class="lang-en">Haraj</span></a>
-            <a href="https://haraj.com.sa/@sbh_513?src=ios" target="_blank">📢 <span class="lang-ar">إعلاناتنا</span><span class="lang-en">Our Ads</span></a>
-            <a href="https://www.google.com/maps/place/24%C2%B037'01.4%22N+46%C2%B042'46.4%22E" target="_blank">📍 <span class="lang-ar">الموقع</span><span class="lang-en">Location</span></a>
+            <a href="https://haraj.com.sa/shared-post/019e03a4-a156-7d0e-a157-987ded755cda/" target="_blank">🛒 حراج</a>
+            <a href="https://haraj.com.sa/@sbh_513?src=ios" target="_blank">📢 إعلاناتنا</a>
+            <a href="https://www.google.com/maps/place/24%C2%B037'01.4%22N+46%C2%B042'46.4%22E" target="_blank">📍 الموقع</a>
         </div>
-        <p class="copyright">
-            <span class="lang-ar">المملكة العربية السعودية | جميع الحقوق محفوظة</span>
-            <span class="lang-en">Saudi Arabia | All Rights Reserved</span>
-        </p>
+        <p class="copyright">المملكة العربية السعودية | جميع الحقوق محفوظة</p>
     </footer>
 
     <script src="js/gallery.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeEls = document.querySelectorAll('.fade-in');
+            fadeEls.forEach((el, i) => {
+                setTimeout(() => el.classList.add('visible'), i * 150);
+            });
+        });
+    </script>
 </body>
 </html>

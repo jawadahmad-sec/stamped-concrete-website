@@ -1,16 +1,16 @@
 const galleryImages = [
-    { src: "images/gallery/work1.jpeg", altAr: "خرسانة مطبوعة - صبة مروحة", altEn: "Stamped Concrete - Fan Pattern" },
-    { src: "images/gallery/work2.jpeg", altAr: "خرسانة ملونة - تصميم موزاييك", altEn: "Colored Concrete - Mosaic Design" },
-    { src: "images/gallery/work3.jpeg", altAr: "صبة ترازو فاخرة", altEn: "Luxury Terrazzo Finish" },
-    { src: "images/gallery/work4.jpeg", altAr: "أرضية مشطبة ناعمة", altEn: "Smooth Trowel Finish Floor" },
-    { src: "images/gallery/work5.jpeg", altAr: "ديكور ريزن بوند حديث", altEn: "Modern Resin Bond Decor" },
-    { src: "images/gallery/work6.jpeg", altAr: "خرسانة مطبوعة ملونة", altEn: "Colored Stamped Concrete" },
-    { src: "images/gallery/work7.jpeg", altAr: "خرسانة مطبوعة - نقشة مميزة", altEn: "Stamped Concrete - Distinctive Pattern" },
-    { src: "images/gallery/work8.jpeg", altAr: "صبة ملونة بأشكال هندسية", altEn: "Colored Slab with Geometric Shapes" },
-    { src: "images/gallery/work9.jpeg", altAr: "أرضية موزاييك فاخرة", altEn: "Luxurious Mosaic Flooring" },
-    { src: "images/gallery/work10.jpeg", altAr: "تشطيب ريزن بوند عصري", altEn: "Contemporary Resin Bond Finish" },
-    { src: "images/gallery/work11.jpeg", altAr: "تشطيب ريزن بوند عصري", altEn: "Contemporary Resin Bond Finish" },
-    { src: "images/gallery/work12.jpeg", altAr: "تشطيب ريزن بوند عصري", altEn: "Contemporary Resin Bond Finish" }
+    { src: "images/gallery/work1.jpeg", alt: "خرسانة مطبوعة - صبة مروحة" },
+    { src: "images/gallery/work2.jpeg", alt: "خرسانة ملونة - تصميم موزاييك" },
+    { src: "images/gallery/work3.jpeg", alt: "صبة ترازو فاخرة" },
+    { src: "images/gallery/work4.jpeg", alt: "أرضية مشطبة ناعمة" },
+    { src: "images/gallery/work5.jpeg", alt: "ديكور ريزن بوند حديث" },
+    { src: "images/gallery/work6.jpeg", alt: "خرسانة مطبوعة ملونة" },
+    { src: "images/gallery/work7.jpeg", alt: "خرسانة مطبوعة - نقشة مميزة" },
+    { src: "images/gallery/work8.jpeg", alt: "صبة ملونة بأشكال هندسية" },
+    { src: "images/gallery/work9.jpeg", alt: "أرضية موزاييك فاخرة" },
+    { src: "images/gallery/work10.jpeg", alt: "تشطيب ريزن بوند عصري" },
+    { src: "images/gallery/work11.jpeg", alt: "تشطيب ريزن بوند عصري" },
+    { src: "images/gallery/work12.jpeg", alt: "تشطيب ريزن بوند عصري" }
 
 ];
 
@@ -19,19 +19,15 @@ const galleryContainer = document.getElementById("gallery");
 galleryImages.forEach(img => {
     const div = document.createElement("div");
     div.className = "gallery-item";
-    div.innerHTML = `<img src="${img.src}" alt="${img.altAr}" loading="lazy">`;
-    div.onclick = () => openLightbox(img.src, img.altAr, img.altEn);
+    div.innerHTML = `<img src="${img.src}" alt="${img.alt}" loading="lazy">`;
+    div.onclick = () => openLightbox(img.src, img.alt);
     galleryContainer.appendChild(div);
 });
 
-function openLightbox(src, altAr, altEn) {
+function openLightbox(src, alt) {
     document.getElementById("lightbox").style.display = "block";
     document.getElementById("lightbox-img").src = src;
-    const captionDiv = document.getElementById("caption");
-    captionDiv.innerHTML = `<span class="lang-ar">${altAr}</span><span class="lang-en">${altEn}</span>`;
-    const isEnglish = document.documentElement.classList.contains('lang-en');
-    captionDiv.querySelector('.lang-ar').style.display = isEnglish ? 'none' : '';
-    captionDiv.querySelector('.lang-en').style.display = isEnglish ? '' : 'none';
+    document.getElementById("caption").innerText = alt;
 }
 
 document.querySelector(".close").onclick = function() {
@@ -44,13 +40,3 @@ window.onclick = function(event) {
         lightbox.style.display = "none";
     }
 }
-
-// Update lightbox caption if language toggled while lightbox is open
-document.getElementById('lang-toggle')?.addEventListener('click', function() {
-    const caption = document.getElementById('caption');
-    if (caption && document.getElementById("lightbox").style.display === "block") {
-        const isEnglish = document.documentElement.classList.contains('lang-en');
-        caption.querySelector('.lang-ar').style.display = isEnglish ? 'none' : '';
-        caption.querySelector('.lang-en').style.display = isEnglish ? '' : 'none';
-    }
-});
