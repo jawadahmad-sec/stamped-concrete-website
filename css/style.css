@@ -1,0 +1,453 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fdfbf7;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e293b;
+    color: white;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #f5c542;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav a.active, nav a:hover {
+    background: #c0842e;
+}
+
+/* Language Switch Button */
+.lang-btn {
+    background: #c0842e;
+    color: white;
+    border: none;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    white-space: nowrap;
+    margin-right: 1rem;
+}
+
+.lang-btn:hover {
+    background: #a06d1a;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #1e293b, #2d3a4a);
+    color: white;
+}
+
+.small-hero {
+    padding: 2.5rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #f5c542;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background: #c0842e;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background: #a06d1a;
+}
+
+/* Services */
+.services {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: white;
+    border-bottom: 3px solid #f5c542;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #1e293b;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.service-item {
+    background: #fef3c7;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #1e293b;
+    border: 1px solid #f5c542;
+}
+
+.note {
+    color: #555;
+    font-size: 1rem;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #fdfbf7;
+}
+
+.cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+/* CTA buttons row */
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.whatsapp-cta-btn {
+    background: #25D366;
+}
+
+.whatsapp-cta-btn:hover {
+    background: #128C7E;
+}
+
+.email-cta-btn {
+    background: #1e293b;
+    color: #f5c542;
+    border: 2px solid #f5c542;
+}
+
+.email-cta-btn:hover {
+    background: #c0842e;
+    color: white;
+    border-color: #c0842e;
+}
+
+/* Footer */
+footer {
+    background: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    direction: rtl;
+}
+
+footer a {
+    color: #f5c542;
+    text-decoration: none;
+}
+
+.footer-contact {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.social-links a {
+    color: white;
+    background: rgba(255,255,255,0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    transition: background 0.3s;
+    text-decoration: none;
+    border: 1px solid rgba(245,197,66,0.3);
+}
+
+.social-links a:hover {
+    background: #c0842e;
+    border-color: #f5c542;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+/* Gallery */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s;
+    background: #fff;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+    max-height: 80vh;
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#caption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 1.2em;
+}
+
+/* Contact Page (shared) */
+.contact-form-section {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    border-top: 4px solid #c0842e;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background: #128C7E;
+}
+
+/* Extra Links Section */
+.extra-links {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.extra-links h2, .extra-links h3 {
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.social-btn {
+    background: #1e293b;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s;
+    font-size: 0.95rem;
+}
+
+.social-btn:hover {
+    background: #c0842e;
+}
+
+.map-link {
+    margin-top: 1rem;
+}
+
+.map-btn {
+    display: inline-block;
+    background: #c0842e;
+    color: white;
+    padding: 0.7rem 1.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.map-btn:hover {
+    background: #a06d1a;
+}
+
+/* ---------- LANGUAGE TOGGLE RULES ---------- */
+/* Hide English by default (Arabic shown) */
+.lang-en {
+    display: none;
+}
+
+/* When HTML has class lang-en, show English and hide Arabic */
+html.lang-en .lang-ar {
+    display: none;
+}
+html.lang-en .lang-en {
+    display: inline;
+}
+/* For block elements that might be span, but need block display */
+html.lang-en h1 .lang-en,
+html.lang-en h2 .lang-en,
+html.lang-en p .lang-en,
+html.lang-en .btn .lang-en,
+html.lang-en .service-item .lang-en,
+html.lang-en label .lang-en {
+    display: inline;
+}
+/* Ensure hero title and similar large spans are block if needed */
+html.lang-en .hero h1 .lang-en,
+html.lang-en .hero p .lang-en {
+    display: block;
+}
+
+/* Direction handling */
+html[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+}
+html[dir="ltr"] body {
+    direction: ltr;
+    text-align: left;
+}
+
+/* LTR specific fix for navigation layout */
+html[dir="ltr"] nav {
+    flex-direction: row;
+}
+html[dir="rtl"] nav {
+    flex-direction: row;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
