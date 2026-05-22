@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عملائنا – أرضيات خرسانة مطبوعة | Our Customers</title>
-    <meta name="description" content="عدد العملاء الذين تعاملنا معهم – خدمات خرسانة مطبوعة في السعودية">
-    <meta property="og:title" content="عملائنا – أرضيات خرسانة مطبوعة">
-    <meta property="og:description" content="تعرف على عدد مشاريعنا وعملائنا">
+    <title>اتصل بنا – أرضيات خرسانة مطبوعة | Contact Us</title>
+    <meta name="description" content="تواصل مع فريق ديكورات الخرسانة في السعودية – واتساب، هاتف، أو نموذج الاتصال.">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script>
@@ -27,36 +25,63 @@
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="services.html">خدماتنا</a></li>
                 <li><a href="gallery.html">معرض الأعمال</a></li>
-                <li><a href="customers.html" class="active">عملائنا</a></li>
+                <li><a href="customers.html">عملائنا</a></li>
                 <li><a href="blog.html">المدونة</a></li>
                 <li><a href="about.html">من نحن</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
+                <li><a href="contact.html" class="active">اتصل بنا</a></li>
             </ul>
             <button id="lang-toggle" class="lang-btn">English</button>
         </div>
     </nav>
 
     <section class="hero small-hero" data-aos="fade-up">
-        <h1>عملائنا</h1>
-        <p>ثقتكم هي سر نجاحنا</p>
+        <h1>اتصل بنا</h1>
+        <p>نحن في انتظار استفساراتكم</p>
     </section>
 
-    <section class="double-counter" data-aos="fade-up">
-        <div class="counter-card">
-            <span class="counter-number" id="happyCustomers">0</span>
-            <span class="counter-label">عميل سعيد</span>
-        </div>
-        <div class="counter-card">
-            <span class="counter-number" id="currentProjects">0</span>
-            <span class="counter-label">مشروع قيد التنفيذ</span>
+    <!-- Netlify Form (guaranteed detection) -->
+    <section class="contact-form-section" data-aos="fade-up">
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <p style="display:none;">
+                <label>لا تملأ هذا الحقل: <input name="bot-field"></label>
+            </p>
+
+            <label>الاسم</label>
+            <input type="text" name="name" required>
+
+            <label>رقم الجوال</label>
+            <input type="tel" name="phone" required>
+
+            <label>الرسالة</label>
+            <textarea name="message" rows="5" required></textarea>
+
+            <button type="submit" class="btn">إرسال</button>
+        </form>
+
+        <!-- WhatsApp alternative -->
+        <div class="whatsapp-contact" style="margin-top:2rem; text-align:center;">
+            <p>أو تواصل عبر واتساب:</p>
+            <a href="https://wa.me/966590929980?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمات%20الخرسانة%20المطبوعة%20والديكورات." target="_blank" class="whatsapp-btn">📱 واتساب – 0590929980</a>
+            <p style="margin-top:0.5rem;">رقم آخر: <a href="https://wa.me/966546563615?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمات%20الخرسانة%20المطبوعة%20والديكورات." target="_blank">0546563615</a></p>
         </div>
     </section>
-    <p class="counter-note" data-aos="fade-up">بفضل الله ثم ثقتكم، هذه أرقامنا حتى الآن</p>
 
-    <section class="customers-gallery-section" data-aos="fade-up">
-        <h2>عملاؤنا السابقون</h2>
-        <p style="margin-bottom:1rem; color:#555;">بعض من أعمالنا التي نفذناها لعملائنا</p>
-        <div class="customer-gallery" id="previousGallery"></div>
+    <!-- Social links & map -->
+    <section class="extra-links" data-aos="fade-up">
+        <h2>تابعنا على</h2>
+        <div class="social-buttons">
+            <a href="mailto:Ziaurrahmanzsdir5405@gmail.com" class="social-btn">📧 البريد الإلكتروني</a>
+            <a href="https://youtube.com/@ziaurrahmandir9875" target="_blank" class="social-btn">▶️ YouTube</a>
+            <a href="https://www.tiktok.com/@concrete.stumped" target="_blank" class="social-btn">🎵 TikTok</a>
+            <a href="https://www.instagram.com/stamped_concrets_flooring" target="_blank" class="social-btn">📷 Instagram</a>
+            <a href="https://haraj.com.sa/shared-post/019e03a4-a156-7d0e-a157-987ded755cda/" target="_blank" class="social-btn">🛒 حراج</a>
+            <a href="https://haraj.com.sa/@sbh_513?src=ios" target="_blank" class="social-btn">📢 إعلاناتنا</a>
+        </div>
+        <div class="map-link">
+            <h3>موقعنا</h3>
+            <a href="https://www.google.com/maps/place/24%C2%B037'01.4%22N+46%C2%B042'46.4%22E" target="_blank" class="map-btn">📍 عرض الموقع في خرائط جوجل</a>
+        </div>
     </section>
 
     <footer>
@@ -74,86 +99,6 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        const randomHappy = Math.floor(Math.random() * 201) + 200;
-        const randomProjects = Math.floor(Math.random() * 101) + 100;
-        document.getElementById('happyCustomers').setAttribute('data-target', randomHappy);
-        document.getElementById('currentProjects').setAttribute('data-target', randomProjects);
-
-        function animateCounter(el, start, end, duration) {
-            let current = start;
-            const stepTime = Math.abs(Math.floor(duration / (end - start)));
-            const timer = setInterval(() => {
-                current += 1;
-                el.textContent = current;
-                if (current >= end) { el.textContent = end; clearInterval(timer); }
-            }, stepTime);
-        }
-
-        const counterElements = document.querySelectorAll('.counter-number');
-        const counterObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    const finalValue = parseInt(el.getAttribute('data-target'));
-                    if (finalValue) animateCounter(el, 0, finalValue, 2000);
-                    observer.unobserve(el);
-                }
-            });
-        }, { threshold: 0.5 });
-        counterElements.forEach(el => counterObserver.observe(el));
-
-        const langBtn = document.getElementById('lang-toggle');
-        if (langBtn) {
-            langBtn.addEventListener('click', () => {
-                const html = document.documentElement;
-                const isEn = html.classList.contains('lang-en');
-                if (isEn) {
-                    html.classList.remove('lang-en'); html.setAttribute('lang','ar'); html.setAttribute('dir','rtl');
-                    langBtn.textContent = 'English'; localStorage.setItem('siteLang','ar');
-                } else {
-                    html.classList.add('lang-en'); html.setAttribute('lang','en'); html.setAttribute('dir','ltr');
-                    langBtn.textContent = 'عربي'; localStorage.setItem('siteLang','en');
-                }
-            });
-            langBtn.textContent = document.documentElement.classList.contains('lang-en') ? 'عربي' : 'English';
-        }
-
-        // ★★★ CORRECTED NAMES FOR EACH IMAGE ★★★
-        const previousData = [
-            { src: "images/gallery/work1.jpeg",  name: "بلاط ملون",       link: "#" },
-            { src: "images/gallery/work2.jpeg",  name: "بلاط خشابي",      link: "#" },
-            { src: "images/gallery/work3.jpeg",  name: "صبة مطبوعة",      link: "#" },
-            { src: "images/gallery/work4.jpeg",  name: "ديكورات جدارية",   link: "#" },
-            { src: "images/gallery/work5.jpeg",  name: "تيرازو",          link: "#" },
-            { src: "images/gallery/work6.jpeg",  name: "إنترلوك",         link: "#" },
-            { src: "images/gallery/work7.jpeg",  name: "بلاط رصيف",       link: "#" },
-            { src: "images/gallery/work8.jpeg",  name: "إنترلوك أحمر",     link: "#" },
-            { src: "images/gallery/work9.jpeg",  name: "ممر حدائق",       link: "#" },
-            { src: "images/gallery/work10.jpeg", name: "ممر صناعي",       link: "#" },
-            { src: "images/gallery/work11.jpeg", name: "حجر متداخل",      link: "#" },
-            { src: "images/gallery/work12.jpeg", name: "بلاط مسابح",      link: "#" }
-        ];
-
-        const prevContainer = document.getElementById('previousGallery');
-        previousData.forEach(item => {
-            const cardLink = document.createElement('a');
-            cardLink.href = item.link;
-            cardLink.className = 'customer-card';
-            cardLink.style.textDecoration = 'none';
-            cardLink.style.color = 'inherit';
-            cardLink.innerHTML = `
-                <img src="${item.src}" alt="${item.name}" loading="lazy">
-                <div class="work-name">${item.name}</div>
-            `;
-            prevContainer.appendChild(cardLink);
-        });
-
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        if (hamburger && navLinks) hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
-
-        AOS.init({ duration: 800, once: true });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
