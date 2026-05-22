@@ -1,7 +1,16 @@
-// Initialize AOS (Animate On Scroll)
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+}
+
+// AOS init
 AOS.init({ duration: 800, once: true });
 
-// Initialize Swiper hero slider
+// Swiper slider
 const swiper = new Swiper('.hero-slider', {
     loop: true,
     autoplay: { delay: 4000 },
@@ -9,7 +18,7 @@ const swiper = new Swiper('.hero-slider', {
     navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
 });
 
-// Language Toggle
+// Language toggle
 const langBtn = document.getElementById('lang-toggle');
 const html = document.documentElement;
 if (langBtn) {
@@ -29,12 +38,11 @@ if (langBtn) {
             localStorage.setItem('siteLang', 'en');
         }
     });
-    // Set initial button text based on current language
     const currentLang = html.classList.contains('lang-en') ? 'en' : 'ar';
     langBtn.textContent = currentLang === 'en' ? 'عربي' : 'English';
 }
 
-// Animated Counters (bulletproof)
+// Animated counters (using data-target)
 function animateCounter(el, start, end, duration) {
     let current = start;
     const stepTime = Math.abs(Math.floor(duration / (end - start)));
@@ -48,7 +56,6 @@ function animateCounter(el, start, end, duration) {
     }, stepTime);
 }
 
-// Observe each counter element individually
 const counterElements = document.querySelectorAll('.counter-number');
 const counterObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -58,7 +65,7 @@ const counterObserver = new IntersectionObserver((entries, observer) => {
             if (finalValue) {
                 animateCounter(el, 0, finalValue, 2000);
             }
-            observer.unobserve(el); // only animate once
+            observer.unobserve(el);
         }
     });
 }, { threshold: 0.5 });

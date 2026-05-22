@@ -11,38 +11,33 @@
         (function() {
             const lang = localStorage.getItem('siteLang') || 'ar';
             const html = document.documentElement;
-            if (lang === 'en') {
-                html.classList.add('lang-en');
-                html.setAttribute('lang', 'en');
-                html.setAttribute('dir', 'ltr');
-            } else {
-                html.classList.remove('lang-en');
-                html.setAttribute('lang', 'ar');
-                html.setAttribute('dir', 'rtl');
-            }
+            if (lang === 'en') { html.classList.add('lang-en'); html.setAttribute('lang','en'); html.setAttribute('dir','ltr'); }
+            else { html.classList.remove('lang-en'); html.setAttribute('lang','ar'); html.setAttribute('dir','rtl'); }
         })();
     </script>
 </head>
 <body>
     <nav>
         <div class="logo">ديكورات الخرسانة</div>
-        <ul>
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="services.html">خدماتنا</a></li>
-            <li><a href="gallery.html">معرض الأعمال</a></li>
-            <li><a href="customers.html">عملائنا</a></li>
-            <li><a href="blog.html">المدونة</a></li>
-            <li><a href="about.html">من نحن</a></li>
-            <li><a href="contact.html">اتصل بنا</a></li>
-        </ul>
-        <button id="lang-toggle" class="lang-btn">English</button>
+        <button class="hamburger" id="hamburger">☰</button>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="gallery.html">معرض الأعمال</a></li>
+                <li><a href="customers.html">عملائنا</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+            <button id="lang-toggle" class="lang-btn">English</button>
+        </div>
     </nav>
 
     <article class="single-post" data-aos="fade-up">
         <h1>فوائد الخرسانة المطبوعة للمنازل العصرية</h1>
         <img src="images/gallery/work1.jpeg" alt="خرسانة مطبوعة" style="width:100%; border-radius:10px; margin:1rem 0;">
         <p>الخرسانة المطبوعة هي واحدة من أفضل الخيارات للأرضيات العصرية...</p>
-        <!-- Full article content -->
         <a href="blog.html" class="btn">العودة إلى المدونة</a>
     </article>
 
@@ -54,6 +49,7 @@
             <a href="https://www.tiktok.com/@concrete.stumped" target="_blank">🎵 TikTok</a>
             <a href="https://www.instagram.com/stamped_concrets_flooring" target="_blank">📷 Instagram</a>
             <a href="https://haraj.com.sa/shared-post/019e03a4-a156-7d0e-a157-987ded755cda/" target="_blank">🛒 حراج</a>
+            <a href="https://haraj.com.sa/@sbh_513?src=ios" target="_blank">📢 إعلاناتنا</a>
             <a href="https://www.google.com/maps/place/24%C2%B037'01.4%22N+46%C2%B042'46.4%22E" target="_blank">📍 الموقع</a>
         </div>
         <p class="copyright">المملكة العربية السعودية | جميع الحقوق محفوظة</p>

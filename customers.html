@@ -7,42 +7,35 @@
     <meta name="description" content="عدد العملاء الذين تعاملنا معهم – خدمات خرسانة مطبوعة في السعودية">
     <meta property="og:title" content="عملائنا – أرضيات خرسانة مطبوعة">
     <meta property="og:description" content="تعرف على عدد مشاريعنا وعملائنا">
-    <meta property="og:type" content="website">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Prevent flash of wrong language -->
     <script>
         (function() {
             const lang = localStorage.getItem('siteLang') || 'ar';
             const html = document.documentElement;
-            if (lang === 'en') {
-                html.classList.add('lang-en');
-                html.setAttribute('lang', 'en');
-                html.setAttribute('dir', 'ltr');
-            } else {
-                html.classList.remove('lang-en');
-                html.setAttribute('lang', 'ar');
-                html.setAttribute('dir', 'rtl');
-            }
+            if (lang === 'en') { html.classList.add('lang-en'); html.setAttribute('lang','en'); html.setAttribute('dir','ltr'); }
+            else { html.classList.remove('lang-en'); html.setAttribute('lang','ar'); html.setAttribute('dir','rtl'); }
         })();
     </script>
 </head>
 <body>
     <nav>
         <div class="logo">ديكورات الخرسانة</div>
-        <ul>
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="services.html">خدماتنا</a></li>
-            <li><a href="gallery.html">معرض الأعمال</a></li>
-            <li><a href="customers.html" class="active">عملائنا</a></li>
-            <li><a href="blog.html">المدونة</a></li>
-            <li><a href="about.html">من نحن</a></li>
-            <li><a href="contact.html">اتصل بنا</a></li>
-        </ul>
-        <button id="lang-toggle" class="lang-btn">English</button>
+        <button class="hamburger" id="hamburger">☰</button>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="gallery.html">معرض الأعمال</a></li>
+                <li><a href="customers.html" class="active">عملائنا</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+            <button id="lang-toggle" class="lang-btn">English</button>
+        </div>
     </nav>
 
-    <!-- Hero -->
     <section class="hero small-hero" data-aos="fade-up">
         <h1>عملائنا</h1>
         <p>ثقتكم هي سر نجاحنا</p>
@@ -82,76 +75,55 @@
         <p class="copyright">المملكة العربية السعودية | جميع الحقوق محفوظة</p>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // ---------- 1. Random targets ----------
-        const randomHappy = Math.floor(Math.random() * 201) + 200;   // 200 – 400
-        const randomProjects = Math.floor(Math.random() * 101) + 100; // 100 – 200
-
-        // Set data-target attributes for the counters
+        // Random targets
+        const randomHappy = Math.floor(Math.random() * 201) + 200;
+        const randomProjects = Math.floor(Math.random() * 101) + 100;
         document.getElementById('happyCustomers').setAttribute('data-target', randomHappy);
         document.getElementById('currentProjects').setAttribute('data-target', randomProjects);
 
-        // ---------- 2. Robust counter animation ----------
         function animateCounter(el, start, end, duration) {
             let current = start;
             const stepTime = Math.abs(Math.floor(duration / (end - start)));
             const timer = setInterval(() => {
                 current += 1;
                 el.textContent = current;
-                if (current >= end) {
-                    el.textContent = end;
-                    clearInterval(timer);
-                }
+                if (current >= end) { el.textContent = end; clearInterval(timer); }
             }, stepTime);
         }
 
-        // Observe each counter element and start animation when visible
         const counterElements = document.querySelectorAll('.counter-number');
         const counterObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const el = entry.target;
                     const finalValue = parseInt(el.getAttribute('data-target'));
-                    if (finalValue) {
-                        animateCounter(el, 0, finalValue, 2000);
-                    }
-                    observer.unobserve(el); // only animate once
+                    if (finalValue) animateCounter(el, 0, finalValue, 2000);
+                    observer.unobserve(el);
                 }
             });
         }, { threshold: 0.5 });
+        counterElements.forEach(el => counterObserver.observe(el));
 
-        counterElements.forEach(el => {
-            counterObserver.observe(el);
-        });
-
-        // ---------- 3. Language toggle (inline, because main.js may not be loaded) ----------
+        // Language toggle
         const langBtn = document.getElementById('lang-toggle');
         if (langBtn) {
             langBtn.addEventListener('click', () => {
                 const html = document.documentElement;
                 const isEn = html.classList.contains('lang-en');
                 if (isEn) {
-                    html.classList.remove('lang-en');
-                    html.setAttribute('lang', 'ar');
-                    html.setAttribute('dir', 'rtl');
-                    langBtn.textContent = 'English';
-                    localStorage.setItem('siteLang', 'ar');
+                    html.classList.remove('lang-en'); html.setAttribute('lang','ar'); html.setAttribute('dir','rtl');
+                    langBtn.textContent = 'English'; localStorage.setItem('siteLang','ar');
                 } else {
-                    html.classList.add('lang-en');
-                    html.setAttribute('lang', 'en');
-                    html.setAttribute('dir', 'ltr');
-                    langBtn.textContent = 'عربي';
-                    localStorage.setItem('siteLang', 'en');
+                    html.classList.add('lang-en'); html.setAttribute('lang','en'); html.setAttribute('dir','ltr');
+                    langBtn.textContent = 'عربي'; localStorage.setItem('siteLang','en');
                 }
             });
-            // Set initial button text
-            const currentLang = document.documentElement.classList.contains('lang-en') ? 'en' : 'ar';
-            langBtn.textContent = currentLang === 'en' ? 'عربي' : 'English';
+            langBtn.textContent = document.documentElement.classList.contains('lang-en') ? 'عربي' : 'English';
         }
 
-        // ---------- 4. Build previous gallery ----------
+        // Previous gallery
         const previousData = [
             { src: "images/gallery/work1.jpeg", name: "صبة مروحة" },
             { src: "images/gallery/work2.jpeg", name: "موزاييك" },
@@ -164,7 +136,6 @@
             { src: "images/gallery/work9.jpeg", name: "موزاييك فاخر" },
             { src: "images/gallery/work10.jpeg", name: "تشطيب عصري" }
         ];
-
         const prevContainer = document.getElementById('previousGallery');
         previousData.forEach(item => {
             const card = document.createElement('div');
@@ -173,7 +144,11 @@
             prevContainer.appendChild(card);
         });
 
-        // ---------- 5. Initialize AOS ----------
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        if (hamburger && navLinks) hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+
         AOS.init({ duration: 800, once: true });
     </script>
 </body>

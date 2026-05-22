@@ -8,39 +8,33 @@
     <meta name="keywords" content="اتصل بنا, خرسانة مطبوعة, أرضيات ديكور, السعودية, صبة ترازو, موزاييك, ريزن بوند">
     <meta property="og:title" content="اتصل بنا – أرضيات خرسانة مطبوعة">
     <meta property="og:description" content="تواصل معنا عبر الواتساب أو نموذج الاتصال – خدمات الخرسانة المطبوعة في السعودية.">
-    <meta property="og:type" content="website">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Prevent flash of wrong language -->
     <script>
         (function() {
             const lang = localStorage.getItem('siteLang') || 'ar';
             const html = document.documentElement;
-            if (lang === 'en') {
-                html.classList.add('lang-en');
-                html.setAttribute('lang', 'en');
-                html.setAttribute('dir', 'ltr');
-            } else {
-                html.classList.remove('lang-en');
-                html.setAttribute('lang', 'ar');
-                html.setAttribute('dir', 'rtl');
-            }
+            if (lang === 'en') { html.classList.add('lang-en'); html.setAttribute('lang','en'); html.setAttribute('dir','ltr'); }
+            else { html.classList.remove('lang-en'); html.setAttribute('lang','ar'); html.setAttribute('dir','rtl'); }
         })();
     </script>
 </head>
 <body>
     <nav>
         <div class="logo">ديكورات الخرسانة</div>
-        <ul>
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="services.html">خدماتنا</a></li>
-            <li><a href="gallery.html">معرض الأعمال</a></li>
-            <li><a href="customers.html">عملائنا</a></li>
-            <li><a href="blog.html">المدونة</a></li>
-            <li><a href="about.html">من نحن</a></li>
-            <li><a href="contact.html" class="active">اتصل بنا</a></li>
-        </ul>
-        <button id="lang-toggle" class="lang-btn">English</button>
+        <button class="hamburger" id="hamburger">☰</button>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="gallery.html">معرض الأعمال</a></li>
+                <li><a href="customers.html">عملائنا</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html" class="active">اتصل بنا</a></li>
+            </ul>
+            <button id="lang-toggle" class="lang-btn">English</button>
+        </div>
     </nav>
 
     <section class="hero small-hero" data-aos="fade-up">
@@ -48,41 +42,27 @@
         <p>نحن في انتظار استفساراتكم</p>
     </section>
 
-    <!-- Netlify Form – This version is guaranteed to be detected -->
+    <!-- Netlify Form -->
     <section class="contact-form-section" data-aos="fade-up">
         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <!-- Hidden input required by Netlify -->
             <input type="hidden" name="form-name" value="contact">
-            <!-- Honeypot spam protection (hidden from users) -->
-            <p style="display:none;">
-                <label>Don’t fill this out: <input name="bot-field"></label>
-            </p>
-
+            <p style="display:none;"><label>Don’t fill this out: <input name="bot-field"></label></p>
             <label>الاسم</label>
             <input type="text" name="name" required>
-
             <label>رقم الجوال</label>
             <input type="tel" name="phone" required>
-
             <label>الرسالة</label>
             <textarea name="message" rows="5" required></textarea>
-
             <button type="submit" class="btn">إرسال</button>
         </form>
 
-        <!-- WhatsApp alternative -->
         <div class="whatsapp-contact" style="margin-top:2rem; text-align:center;">
             <p>أو تواصل عبر واتساب:</p>
-            <a href="https://wa.me/966590929980?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمات%20الخرسانة%20المطبوعة%20والديكورات." target="_blank" class="whatsapp-btn">
-                📱 واتساب – 0590929980
-            </a>
-            <p style="margin-top:0.5rem;">رقم آخر: 
-                <a href="https://wa.me/966546563615?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمات%20الخرسانة%20المطبوعة%20والديكورات." target="_blank">0546563615</a>
-            </p>
+            <a href="https://wa.me/966590929980?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمات%20الخرسانة%20المطبوعة%20والديكورات." target="_blank" class="whatsapp-btn">📱 واتساب – 0590929980</a>
+            <p style="margin-top:0.5rem;">رقم آخر: <a href="https://wa.me/966546563615?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمات%20الخرسانة%20المطبوعة%20والديكورات." target="_blank">0546563615</a></p>
         </div>
     </section>
 
-    <!-- Social links & map -->
     <section class="extra-links" data-aos="fade-up">
         <h2>تابعنا على</h2>
         <div class="social-buttons">
@@ -95,9 +75,7 @@
         </div>
         <div class="map-link">
             <h3>موقعنا</h3>
-            <a href="https://www.google.com/maps/place/24%C2%B037'01.4%22N+46%C2%B042'46.4%22E" target="_blank" class="map-btn">
-                📍 عرض الموقع في خرائط جوجل
-            </a>
+            <a href="https://www.google.com/maps/place/24%C2%B037'01.4%22N+46%C2%B042'46.4%22E" target="_blank" class="map-btn">📍 عرض الموقع في خرائط جوجل</a>
         </div>
     </section>
 
