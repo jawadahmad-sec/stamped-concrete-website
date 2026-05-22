@@ -1,16 +1,16 @@
 const galleryImages = [
-    { src: "images/gallery/work1.jpeg",  alt: "بلاط ملون" },
-    { src: "images/gallery/work2.jpeg",  alt: "بلاط خشابي" },
-    { src: "images/gallery/work3.jpeg",  alt: "صبة مطبوعة" },
-    { src: "images/gallery/work4.jpeg",  alt: "ديكورات جدارية" },
-    { src: "images/gallery/work5.jpeg",  alt: "تيرازو" },
-    { src: "images/gallery/work6.jpeg",  alt: "إنترلوك" },
-    { src: "images/gallery/work7.jpeg",  alt: "بلاط رصيف" },
-    { src: "images/gallery/work8.jpeg",  alt: "إنترلوك أحمر" },
-    { src: "images/gallery/work9.jpeg",  alt: "ممر حدائق" },
-    { src: "images/gallery/work10.jpeg", alt: "ممر صناعي" },
-    { src: "images/gallery/work11.jpeg", alt: "حجر متداخل" },
-    { src: "images/gallery/work12.jpeg", alt: "بلاط مسابح" }
+    { src: "images/gallery/work1.jpeg",  alt: "خراسانه مطبعه صبه دكورلته" },
+    { src: "images/gallery/work2.jpeg",  alt: "صبه مطبعه صبه كنكريت" },
+    { src: "images/gallery/work3.jpeg",  alt: "صبه مطبعه" },
+    { src: "images/gallery/work4.jpeg",  alt: "قوالب وأشكال الخرسانة المطبوعة" },
+    { src: "images/gallery/work5.jpeg",  alt: "صبه ترازو" },
+    { src: "images/gallery/work6.jpeg",  alt: "أرضية الخرسانة المطبوعة الحجرية" },
+    { src: "images/gallery/work7.jpeg",  alt: "ارضياته صبه مطبعه" },
+    { src: "images/gallery/work8.jpeg",  alt: "صبه مطبعه صبه ديكوراته" },
+    { src: "images/gallery/work9.jpeg",  alt: "صبه ديكوار صبه ارضياته" },
+    { src: "images/gallery/work10.jpeg", alt: "صبه ابوكسي" },
+    { src: "images/gallery/work11.jpeg", alt: "الخرسانة المطبوعة المنحنية" },
+    { src: "images/gallery/work12.jpeg", alt: "صبه ديكوار صبه ارضياته" }
 ];
 
 const galleryContainer = document.getElementById("gallery");
