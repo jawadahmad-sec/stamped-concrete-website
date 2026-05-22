@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اتصل بنا – أرضيات خرسانة مطبوعة</title>
+    <title>اتصل بنا – أرضيات خرسانة مطبوعة | Contact Us</title>
     <meta name="description" content="تواصل مع فريق ديكورات الخرسانة في السعودية – واتساب، هاتف، أو نموذج الاتصال.">
+    <meta name="keywords" content="اتصل بنا, خرسانة مطبوعة, أرضيات ديكور, السعودية, صبة ترازو, موزاييك, ريزن بوند">
+    <meta property="og:title" content="اتصل بنا – أرضيات خرسانة مطبوعة">
+    <meta property="og:description" content="تواصل معنا عبر الواتساب أو نموذج الاتصال – خدمات الخرسانة المطبوعة في السعودية.">
+    <meta property="og:type" content="website">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Prevent flash of wrong language -->
     <script>
         (function() {
             const lang = localStorage.getItem('siteLang') || 'ar';
@@ -43,27 +48,41 @@
         <p>نحن في انتظار استفساراتكم</p>
     </section>
 
+    <!-- Netlify Form – This version is guaranteed to be detected -->
     <section class="contact-form-section" data-aos="fade-up">
         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <!-- Hidden input required by Netlify -->
             <input type="hidden" name="form-name" value="contact">
+            <!-- Honeypot spam protection (hidden from users) -->
             <p style="display:none;">
-                <label>Don't fill this out: <input name="bot-field"></label>
+                <label>Don’t fill this out: <input name="bot-field"></label>
             </p>
+
             <label>الاسم</label>
             <input type="text" name="name" required>
+
             <label>رقم الجوال</label>
             <input type="tel" name="phone" required>
+
             <label>الرسالة</label>
             <textarea name="message" rows="5" required></textarea>
+
             <button type="submit" class="btn">إرسال</button>
         </form>
+
+        <!-- WhatsApp alternative -->
         <div class="whatsapp-contact" style="margin-top:2rem; text-align:center;">
             <p>أو تواصل عبر واتساب:</p>
-            <a href="https://wa.me/966590929980?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمات%20الخرسانة%20المطبوعة%20والديكورات." target="_blank" class="whatsapp-btn">📱 واتساب – 0590929980</a>
-            <p style="margin-top:0.5rem;">رقم آخر: <a href="https://wa.me/966546563615?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمات%20الخرسانة%20المطبوعة%20والديكورات." target="_blank">0546563615</a></p>
+            <a href="https://wa.me/966590929980?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمات%20الخرسانة%20المطبوعة%20والديكورات." target="_blank" class="whatsapp-btn">
+                📱 واتساب – 0590929980
+            </a>
+            <p style="margin-top:0.5rem;">رقم آخر: 
+                <a href="https://wa.me/966546563615?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمات%20الخرسانة%20المطبوعة%20والديكورات." target="_blank">0546563615</a>
+            </p>
         </div>
     </section>
 
+    <!-- Social links & map -->
     <section class="extra-links" data-aos="fade-up">
         <h2>تابعنا على</h2>
         <div class="social-buttons">
@@ -72,10 +91,13 @@
             <a href="https://www.tiktok.com/@concrete.stumped" target="_blank" class="social-btn">🎵 TikTok</a>
             <a href="https://www.instagram.com/stamped_concrets_flooring" target="_blank" class="social-btn">📷 Instagram</a>
             <a href="https://haraj.com.sa/shared-post/019e03a4-a156-7d0e-a157-987ded755cda/" target="_blank" class="social-btn">🛒 حراج</a>
+            <a href="https://haraj.com.sa/@sbh_513?src=ios" target="_blank" class="social-btn">📢 إعلاناتنا</a>
         </div>
         <div class="map-link">
             <h3>موقعنا</h3>
-            <a href="https://www.google.com/maps/place/24%C2%B037'01.4%22N+46%C2%B042'46.4%22E" target="_blank" class="map-btn">📍 عرض الموقع في خرائط جوجل</a>
+            <a href="https://www.google.com/maps/place/24%C2%B037'01.4%22N+46%C2%B042'46.4%22E" target="_blank" class="map-btn">
+                📍 عرض الموقع في خرائط جوجل
+            </a>
         </div>
     </section>
 
@@ -87,6 +109,7 @@
             <a href="https://www.tiktok.com/@concrete.stumped" target="_blank">🎵 TikTok</a>
             <a href="https://www.instagram.com/stamped_concrets_flooring" target="_blank">📷 Instagram</a>
             <a href="https://haraj.com.sa/shared-post/019e03a4-a156-7d0e-a157-987ded755cda/" target="_blank">🛒 حراج</a>
+            <a href="https://haraj.com.sa/@sbh_513?src=ios" target="_blank">📢 إعلاناتنا</a>
             <a href="https://www.google.com/maps/place/24%C2%B037'01.4%22N+46%C2%B042'46.4%22E" target="_blank">📍 الموقع</a>
         </div>
         <p class="copyright">المملكة العربية السعودية | جميع الحقوق محفوظة</p>
