@@ -9,69 +9,119 @@
     <meta property="og:title" content="أرضيات خرسانة مطبوعة – صبة ديكور">
     <meta property="og:description" content="أفضل خدمات الخرسانة المطبوعة في السعودية – تصاميم عصرية، أسعار تنافسية.">
     <meta property="og:type" content="website">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        (function() {
+            const lang = localStorage.getItem('siteLang') || 'ar';
+            const html = document.documentElement;
+            if (lang === 'en') {
+                html.classList.add('lang-en');
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+            } else {
+                html.classList.remove('lang-en');
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+            }
+        })();
+    </script>
 </head>
 <body>
     <nav>
         <div class="logo">ديكورات الخرسانة</div>
         <ul>
             <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li><a href="services.html">خدماتنا</a></li>
             <li><a href="gallery.html">معرض الأعمال</a></li>
             <li><a href="customers.html">عملائنا</a></li>
+            <li><a href="blog.html">المدونة</a></li>
+            <li><a href="about.html">من نحن</a></li>
             <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
+        <button id="lang-toggle" class="lang-btn">English</button>
     </nav>
 
-    <section class="hero fade-in">
-        <h1>أرضيات خرسانة مطبوعة – صبة ديكور</h1>
-        <p>ديكورات مختلفة | ألوان وأشكال متعددة | أسعار مناسبة</p>
-        <a href="gallery.html" class="btn">شاهد أعمالنا</a>
-    </section>
-
-    <section class="services fade-in">
-        <h2>خدماتنا</h2>
-        <div class="service-list">
-            <div class="service-item">صبة مروحة</div>
-            <div class="service-item">موزاييك</div>
-            <div class="service-item">صبة ترازو</div>
-            <div class="service-item">صبة مشطبة</div>
-            <div class="service-item">صبة ريزن بوند</div>
+    <!-- Hero Slider -->
+    <div class="swiper hero-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1">
+                <div class="slide-content" data-aos="fade-up">
+                    <h1>أرضيات خرسانة مطبوعة – صبة ديكور</h1>
+                    <p>ديكورات مختلفة | ألوان وأشكال متعددة | أسعار مناسبة</p>
+                    <a href="contact.html" class="btn">احصل على عرض سعر</a>
+                </div>
+            </div>
+            <div class="swiper-slide slide2">
+                <div class="slide-content" data-aos="fade-up">
+                    <h1>خبرة في جميع أنواع الأرضيات الديكورية</h1>
+                    <p>صبة ترازو، ريزن بوند، موزاييك، ومشطبة</p>
+                    <a href="services.html" class="btn">شاهد خدماتنا</a>
+                </div>
+            </div>
         </div>
-        <p class="note">شغل مع مواد وبدون مواد – جميع مناطق المملكة العربية السعودية</p>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Services Overview -->
+    <section class="services-overview" data-aos="fade-up">
+        <h2>خدماتنا</h2>
+        <div class="service-cards">
+            <a href="service-stamped.html" class="service-card">
+                <img src="images/gallery/work1.jpeg" alt="خرسانة مطبوعة">
+                <h3>الخرسانة المطبوعة</h3>
+            </a>
+            <a href="service-terrazzo.html" class="service-card">
+                <img src="images/gallery/work3.jpeg" alt="صبة ترازو">
+                <h3>صبة ترازو</h3>
+            </a>
+            <a href="service-mosaic.html" class="service-card">
+                <img src="images/gallery/work2.jpeg" alt="موزاييك">
+                <h3>موزاييك</h3>
+            </a>
+            <a href="service-resin.html" class="service-card">
+                <img src="images/gallery/work5.jpeg" alt="ريزن بوند">
+                <h3>ريزن بوند</h3>
+            </a>
+        </div>
     </section>
 
-    <section class="cta fade-in">
+    <section class="counter-section" data-aos="fade-up">
+    <div class="counter-box">
+        <span class="counter-number" id="happyCustomers" data-target="350">0</span>
+        <span class="counter-label">عميل سعيد</span>
+    </div>
+    <div class="counter-box">
+        <span class="counter-number" id="currentProjects" data-target="150">0</span>
+        <span class="counter-label">مشروع قيد التنفيذ</span>
+    </div>
+</section>
+
+    <!-- CTA -->
+    <section class="cta" data-aos="fade-up">
         <h2>هل لديك مشروع؟</h2>
         <p>اتصل بنا الآن واحصل على عرض سعر</p>
-        <div class="cta-buttons">
-            <a href="contact.html" class="btn">تواصل معنا</a>
-            <a href="https://wa.me/966590929980?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمات%20الخرسانة%20المطبوعة%20والديكورات." target="_blank" class="btn whatsapp-cta-btn">📱 واتساب</a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Ziaurrahmanzsdir5405@gmail.com&su=استفسار%20عن%20الخرسانة%20المطبوعة&body=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدماتكم..." target="_blank" class="btn email-cta-btn">📧 جيميل</a>
-        </div>
+        <a href="contact.html" class="btn">تواصل معنا</a>
     </section>
 
     <footer>
         <div class="footer-contact">📞 0590929980 – 0546563615</div>
         <div class="social-links">
             <a href="mailto:Ziaurrahmanzsdir5405@gmail.com">📧 البريد الإلكتروني</a>
-            <a href="https://youtube.com/@ziaurrahmandir9875?si=9WGgeaylaAGoXP9o" target="_blank">▶️ YouTube</a>
-            <a href="https://www.tiktok.com/@concrete.stumped?_r=1&_t=ZS-96AVyMabSJc" target="_blank">🎵 TikTok</a>
-            <a href="https://www.instagram.com/stamped_concrets_flooring?igsh=ZmpiemlpenpobGZy&utm_source=qr" target="_blank">📷 Instagram</a>
+            <a href="https://youtube.com/@ziaurrahmandir9875" target="_blank">▶️ YouTube</a>
+            <a href="https://www.tiktok.com/@concrete.stumped" target="_blank">🎵 TikTok</a>
+            <a href="https://www.instagram.com/stamped_concrets_flooring" target="_blank">📷 Instagram</a>
             <a href="https://haraj.com.sa/shared-post/019e03a4-a156-7d0e-a157-987ded755cda/" target="_blank">🛒 حراج</a>
-            <a href="https://haraj.com.sa/@sbh_513?src=ios" target="_blank">📢 إعلاناتنا</a>
             <a href="https://www.google.com/maps/place/24%C2%B037'01.4%22N+46%C2%B042'46.4%22E" target="_blank">📍 الموقع</a>
         </div>
         <p class="copyright">المملكة العربية السعودية | جميع الحقوق محفوظة</p>
     </footer>
 
-    <!-- Fade-in animation on load -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeEls = document.querySelectorAll('.fade-in');
-            fadeEls.forEach((el, i) => {
-                setTimeout(() => el.classList.add('visible'), i * 150);
-            });
-        });
-    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -8,21 +8,19 @@ const galleryImages = [
     { src: "images/gallery/work7.jpeg", alt: "خرسانة مطبوعة - نقشة مميزة" },
     { src: "images/gallery/work8.jpeg", alt: "صبة ملونة بأشكال هندسية" },
     { src: "images/gallery/work9.jpeg", alt: "أرضية موزاييك فاخرة" },
-    { src: "images/gallery/work10.jpeg", alt: "تشطيب ريزن بوند عصري" },
-    { src: "images/gallery/work11.jpeg", alt: "تشطيب ريزن بوند عصري" },
-    { src: "images/gallery/work12.jpeg", alt: "تشطيب ريزن بوند عصري" }
-
+    { src: "images/gallery/work10.jpeg", alt: "تشطيب ريزن بوند عصري" }
 ];
 
 const galleryContainer = document.getElementById("gallery");
-
-galleryImages.forEach(img => {
-    const div = document.createElement("div");
-    div.className = "gallery-item";
-    div.innerHTML = `<img src="${img.src}" alt="${img.alt}" loading="lazy">`;
-    div.onclick = () => openLightbox(img.src, img.alt);
-    galleryContainer.appendChild(div);
-});
+if (galleryContainer) {
+    galleryImages.forEach(img => {
+        const div = document.createElement("div");
+        div.className = "gallery-item";
+        div.innerHTML = `<img src="${img.src}" alt="${img.alt}" loading="lazy">`;
+        div.onclick = () => openLightbox(img.src, img.alt);
+        galleryContainer.appendChild(div);
+    });
+}
 
 function openLightbox(src, alt) {
     document.getElementById("lightbox").style.display = "block";

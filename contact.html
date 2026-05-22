@@ -3,49 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اتصل بنا – أرضيات خرسانة مطبوعة | Contact Us</title>
-    <meta name="description" content="تواصل مع فريق ديكورات الخرسانة في السعودية – واتساب، جيميل، أو عبر النموذج. نقدم خدمات الخرسانة المطبوعة والملونة.">
-    <meta name="keywords" content="اتصل بنا, خرسانة مطبوعة, أرضيات ديكور, السعودية, صبة ترازو, موزاييك, ريزن بوند">
-    <meta property="og:title" content="اتصل بنا – أرضيات خرسانة مطبوعة">
-    <meta property="og:description" content="تواصل معنا عبر الواتساب أو الجيميل – خدمات الخرسانة المطبوعة في السعودية.">
+    <title>اتصل بنا – أرضيات خرسانة مطبوعة</title>
+    <meta name="description" content="تواصل مع فريق ديكورات الخرسانة في السعودية – واتساب، هاتف، أو نموذج الاتصال.">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        (function() {
+            const lang = localStorage.getItem('siteLang') || 'ar';
+            const html = document.documentElement;
+            if (lang === 'en') {
+                html.classList.add('lang-en');
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+            } else {
+                html.classList.remove('lang-en');
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+            }
+        })();
+    </script>
 </head>
 <body>
     <nav>
         <div class="logo">ديكورات الخرسانة</div>
         <ul>
             <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="services.html">خدماتنا</a></li>
             <li><a href="gallery.html">معرض الأعمال</a></li>
             <li><a href="customers.html">عملائنا</a></li>
+            <li><a href="blog.html">المدونة</a></li>
+            <li><a href="about.html">من نحن</a></li>
             <li><a href="contact.html" class="active">اتصل بنا</a></li>
         </ul>
+        <button id="lang-toggle" class="lang-btn">English</button>
     </nav>
 
-    <section class="hero small-hero fade-in">
+    <section class="hero small-hero" data-aos="fade-up">
         <h1>اتصل بنا</h1>
         <p>نحن في انتظار استفساراتكم</p>
     </section>
 
-    <section class="contact-form-section fade-in">
-        <div style="text-align:center; margin-bottom:2rem;">
-            <p style="font-size:1.2rem;">📧 راسلنا عبر البريد الإلكتروني (جيميل):</p>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Ziaurrahmanzsdir5405@gmail.com&su=استفسار%20عن%20الخرسانة%20المطبوعة&body=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدماتكم..." target="_blank" class="btn email-cta-btn" style="font-size:1.1rem;">📧 Ziaurrahmanzsdir5405@gmail.com</a>
-        </div>
-        <div style="text-align:center;">
-            <p style="font-size:1.2rem;">أو تواصل مباشرة عبر واتساب:</p>
+    <section class="contact-form-section" data-aos="fade-up">
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <p style="display:none;">
+                <label>Don't fill this out: <input name="bot-field"></label>
+            </p>
+            <label>الاسم</label>
+            <input type="text" name="name" required>
+            <label>رقم الجوال</label>
+            <input type="tel" name="phone" required>
+            <label>الرسالة</label>
+            <textarea name="message" rows="5" required></textarea>
+            <button type="submit" class="btn">إرسال</button>
+        </form>
+        <div class="whatsapp-contact" style="margin-top:2rem; text-align:center;">
+            <p>أو تواصل عبر واتساب:</p>
             <a href="https://wa.me/966590929980?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمات%20الخرسانة%20المطبوعة%20والديكورات." target="_blank" class="whatsapp-btn">📱 واتساب – 0590929980</a>
-            <p style="margin-top:0.6rem;">رقم آخر: <a href="https://wa.me/966546563615?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمات%20الخرسانة%20المطبوعة%20والديكورات." target="_blank">0546563615</a></p>
+            <p style="margin-top:0.5rem;">رقم آخر: <a href="https://wa.me/966546563615?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمات%20الخرسانة%20المطبوعة%20والديكورات." target="_blank">0546563615</a></p>
         </div>
     </section>
 
-    <section class="extra-links fade-in">
+    <section class="extra-links" data-aos="fade-up">
         <h2>تابعنا على</h2>
         <div class="social-buttons">
-            <a href="https://youtube.com/@ziaurrahmandir9875?si=9WGgeaylaAGoXP9o" target="_blank" class="social-btn">▶️ YouTube</a>
-            <a href="https://www.tiktok.com/@concrete.stumped?_r=1&_t=ZS-96AVyMabSJc" target="_blank" class="social-btn">🎵 TikTok</a>
-            <a href="https://www.instagram.com/stamped_concrets_flooring?igsh=ZmpiemlpenpobGZy&utm_source=qr" target="_blank" class="social-btn">📷 Instagram</a>
+            <a href="mailto:Ziaurrahmanzsdir5405@gmail.com" class="social-btn">📧 البريد الإلكتروني</a>
+            <a href="https://youtube.com/@ziaurrahmandir9875" target="_blank" class="social-btn">▶️ YouTube</a>
+            <a href="https://www.tiktok.com/@concrete.stumped" target="_blank" class="social-btn">🎵 TikTok</a>
+            <a href="https://www.instagram.com/stamped_concrets_flooring" target="_blank" class="social-btn">📷 Instagram</a>
             <a href="https://haraj.com.sa/shared-post/019e03a4-a156-7d0e-a157-987ded755cda/" target="_blank" class="social-btn">🛒 حراج</a>
-            <a href="https://haraj.com.sa/@sbh_513?src=ios" target="_blank" class="social-btn">📢 إعلاناتنا</a>
         </div>
         <div class="map-link">
             <h3>موقعنا</h3>
@@ -57,23 +83,16 @@
         <div class="footer-contact">📞 0590929980 – 0546563615</div>
         <div class="social-links">
             <a href="mailto:Ziaurrahmanzsdir5405@gmail.com">📧 البريد الإلكتروني</a>
-            <a href="https://youtube.com/@ziaurrahmandir9875?si=9WGgeaylaAGoXP9o" target="_blank">▶️ YouTube</a>
-            <a href="https://www.tiktok.com/@concrete.stumped?_r=1&_t=ZS-96AVyMabSJc" target="_blank">🎵 TikTok</a>
-            <a href="https://www.instagram.com/stamped_concrets_flooring?igsh=ZmpiemlpenpobGZy&utm_source=qr" target="_blank">📷 Instagram</a>
+            <a href="https://youtube.com/@ziaurrahmandir9875" target="_blank">▶️ YouTube</a>
+            <a href="https://www.tiktok.com/@concrete.stumped" target="_blank">🎵 TikTok</a>
+            <a href="https://www.instagram.com/stamped_concrets_flooring" target="_blank">📷 Instagram</a>
             <a href="https://haraj.com.sa/shared-post/019e03a4-a156-7d0e-a157-987ded755cda/" target="_blank">🛒 حراج</a>
-            <a href="https://haraj.com.sa/@sbh_513?src=ios" target="_blank">📢 إعلاناتنا</a>
             <a href="https://www.google.com/maps/place/24%C2%B037'01.4%22N+46%C2%B042'46.4%22E" target="_blank">📍 الموقع</a>
         </div>
         <p class="copyright">المملكة العربية السعودية | جميع الحقوق محفوظة</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeEls = document.querySelectorAll('.fade-in');
-            fadeEls.forEach((el, i) => {
-                setTimeout(() => el.classList.add('visible'), i * 150);
-            });
-        });
-    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
