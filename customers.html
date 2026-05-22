@@ -41,7 +41,6 @@
         <p>ثقتكم هي سر نجاحنا</p>
     </section>
 
-    <!-- Double Counter Section -->
     <section class="double-counter" data-aos="fade-up">
         <div class="counter-card">
             <span class="counter-number" id="happyCustomers">0</span>
@@ -54,7 +53,6 @@
     </section>
     <p class="counter-note" data-aos="fade-up">بفضل الله ثم ثقتكم، هذه أرقامنا حتى الآن</p>
 
-    <!-- Previous Customers Gallery -->
     <section class="customers-gallery-section" data-aos="fade-up">
         <h2>عملاؤنا السابقون</h2>
         <p style="margin-bottom:1rem; color:#555;">بعض من أعمالنا التي نفذناها لعملائنا</p>
@@ -77,7 +75,6 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Random targets
         const randomHappy = Math.floor(Math.random() * 201) + 200;
         const randomProjects = Math.floor(Math.random() * 101) + 100;
         document.getElementById('happyCustomers').setAttribute('data-target', randomHappy);
@@ -106,7 +103,6 @@
         }, { threshold: 0.5 });
         counterElements.forEach(el => counterObserver.observe(el));
 
-        // Language toggle (built‑in)
         const langBtn = document.getElementById('lang-toggle');
         if (langBtn) {
             langBtn.addEventListener('click', () => {
@@ -123,29 +119,27 @@
             langBtn.textContent = document.documentElement.classList.contains('lang-en') ? 'عربي' : 'English';
         }
 
-        // ---- Build previous gallery with entire card as a link ----
+        // ---- Updated gallery with final professional names ----
         const previousData = [
-            { src: "images/gallery/work1.jpeg", name: "صبة مروحة", link: "service-stamped.html" },
+            { src: "images/gallery/work1.jpeg", name: "خرسانة مطبوعة", link: "service-stamped.html" },
             { src: "images/gallery/work2.jpeg", name: "موزاييك", link: "service-mosaic.html" },
-            { src: "images/gallery/work3.jpeg", name: "صبة ترازو", link: "service-terrazzo.html" },
-            { src: "images/gallery/work4.jpeg", name: "صبة مشطبة", link: "service-stamped.html" },
+            { src: "images/gallery/work3.jpeg", name: "خرسانة مطبوعة", link: "service-terrazzo.html" },
+            { src: "images/gallery/work4.jpeg", name: "خرسانة ممشطة", link: "service-stamped.html" },
             { src: "images/gallery/work5.jpeg", name: "ريزن بوند", link: "service-resin.html" },
-            { src: "images/gallery/work6.jpeg", name: "خرسانة ملونة", link: "service-stamped.html" },
-            { src: "images/gallery/work7.jpeg", name: "نقشة مميزة", link: "service-stamped.html" },
-            { src: "images/gallery/work8.jpeg", name: "أشكال هندسية", link: "service-stamped.html" },
+            { src: "images/gallery/work6.jpeg", name: "إيبوكسي", link: "service-stamped.html" },
+            { src: "images/gallery/work7.jpeg", name: "خرسانة مطبوعة بنقشة", link: "service-stamped.html" },
+            { src: "images/gallery/work8.jpeg", name: "خرسانة مطبوعة هندسية", link: "service-terrazzo.html" },
             { src: "images/gallery/work9.jpeg", name: "موزاييك فاخر", link: "service-mosaic.html" },
-            { src: "images/gallery/work10.jpeg", name: "تشطيب عصري", link: "service-stamped.html" }
+            { src: "images/gallery/work10.jpeg", name: "ريزن بوند صناعي", link: "service-resin.html" }
         ];
 
         const prevContainer = document.getElementById('previousGallery');
         previousData.forEach(item => {
-            // Create card wrapper (the clickable link)
             const cardLink = document.createElement('a');
             cardLink.href = item.link;
             cardLink.className = 'customer-card';
             cardLink.style.textDecoration = 'none';
             cardLink.style.color = 'inherit';
-
             cardLink.innerHTML = `
                 <img src="${item.src}" alt="${item.name}" loading="lazy">
                 <div class="work-name">${item.name}</div>
@@ -153,7 +147,6 @@
             prevContainer.appendChild(cardLink);
         });
 
-        // Hamburger menu
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
         if (hamburger && navLinks) hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
