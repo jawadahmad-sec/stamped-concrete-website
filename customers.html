@@ -106,7 +106,7 @@
         }, { threshold: 0.5 });
         counterElements.forEach(el => counterObserver.observe(el));
 
-        // Language toggle
+        // Language toggle (built‑in)
         const langBtn = document.getElementById('lang-toggle');
         if (langBtn) {
             langBtn.addEventListener('click', () => {
@@ -123,25 +123,34 @@
             langBtn.textContent = document.documentElement.classList.contains('lang-en') ? 'عربي' : 'English';
         }
 
-        // Previous gallery
+        // ---- Build previous gallery with entire card as a link ----
         const previousData = [
-            { src: "images/gallery/work1.jpeg", name: "صبة مروحة" },
-            { src: "images/gallery/work2.jpeg", name: "موزاييك" },
-            { src: "images/gallery/work3.jpeg", name: "صبة ترازو" },
-            { src: "images/gallery/work4.jpeg", name: "صبة مشطبة" },
-            { src: "images/gallery/work5.jpeg", name: "ريزن بوند" },
-            { src: "images/gallery/work6.jpeg", name: "خرسانة ملونة" },
-            { src: "images/gallery/work7.jpeg", name: "نقشة مميزة" },
-            { src: "images/gallery/work8.jpeg", name: "أشكال هندسية" },
-            { src: "images/gallery/work9.jpeg", name: "موزاييك فاخر" },
-            { src: "images/gallery/work10.jpeg", name: "تشطيب عصري" }
+            { src: "images/gallery/work1.jpeg", name: "صبة مروحة", link: "service-stamped.html" },
+            { src: "images/gallery/work2.jpeg", name: "موزاييك", link: "service-mosaic.html" },
+            { src: "images/gallery/work3.jpeg", name: "صبة ترازو", link: "service-terrazzo.html" },
+            { src: "images/gallery/work4.jpeg", name: "صبة مشطبة", link: "service-stamped.html" },
+            { src: "images/gallery/work5.jpeg", name: "ريزن بوند", link: "service-resin.html" },
+            { src: "images/gallery/work6.jpeg", name: "خرسانة ملونة", link: "service-stamped.html" },
+            { src: "images/gallery/work7.jpeg", name: "نقشة مميزة", link: "service-stamped.html" },
+            { src: "images/gallery/work8.jpeg", name: "أشكال هندسية", link: "service-stamped.html" },
+            { src: "images/gallery/work9.jpeg", name: "موزاييك فاخر", link: "service-mosaic.html" },
+            { src: "images/gallery/work10.jpeg", name: "تشطيب عصري", link: "service-stamped.html" }
         ];
+
         const prevContainer = document.getElementById('previousGallery');
         previousData.forEach(item => {
-            const card = document.createElement('div');
-            card.className = 'customer-card';
-            card.innerHTML = `<img src="${item.src}" alt="${item.name}" loading="lazy"><div class="work-name">${item.name}</div>`;
-            prevContainer.appendChild(card);
+            // Create card wrapper (the clickable link)
+            const cardLink = document.createElement('a');
+            cardLink.href = item.link;
+            cardLink.className = 'customer-card';
+            cardLink.style.textDecoration = 'none';
+            cardLink.style.color = 'inherit';
+
+            cardLink.innerHTML = `
+                <img src="${item.src}" alt="${item.name}" loading="lazy">
+                <div class="work-name">${item.name}</div>
+            `;
+            prevContainer.appendChild(cardLink);
         });
 
         // Hamburger menu
