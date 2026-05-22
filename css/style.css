@@ -251,4 +251,8 @@ html[dir="ltr"] body {
 
     .contact-form-section { width: 90%; margin: 1rem auto; }
     .extra-links { width: 90%; margin: 1rem auto; }
+    /* Force left alignment for all elements when English is active */
+html[dir="ltr"] * {
+    text-align: left !important;
+}
 }
