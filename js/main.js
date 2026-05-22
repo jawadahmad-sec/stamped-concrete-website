@@ -18,31 +18,41 @@ const swiper = new Swiper('.hero-slider', {
     navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
 });
 
-// Language toggle
+// ----- Language Toggle (bulletproof) -----
 const langBtn = document.getElementById('lang-toggle');
 const html = document.documentElement;
-if (langBtn) {
-    langBtn.addEventListener('click', () => {
-        const isEn = html.classList.contains('lang-en');
-        if (isEn) {
-            html.classList.remove('lang-en');
-            html.setAttribute('lang', 'ar');
-            html.setAttribute('dir', 'rtl');
-            langBtn.textContent = 'English';
-            localStorage.setItem('siteLang', 'ar');
-        } else {
-            html.classList.add('lang-en');
-            html.setAttribute('lang', 'en');
-            html.setAttribute('dir', 'ltr');
-            langBtn.textContent = 'عربي';
-            localStorage.setItem('siteLang', 'en');
-        }
-    });
-    const currentLang = html.classList.contains('lang-en') ? 'en' : 'ar';
-    langBtn.textContent = currentLang === 'en' ? 'عربي' : 'English';
+
+function applyLanguage(lang) {
+    if (lang === 'en') {
+        html.classList.add('lang-en');
+        html.setAttribute('lang', 'en');
+        html.setAttribute('dir', 'ltr');
+        if (langBtn) langBtn.textContent = 'عربي';
+        localStorage.setItem('siteLang', 'en');
+    } else {
+        html.classList.remove('lang-en');
+        html.setAttribute('lang', 'ar');
+        html.setAttribute('dir', 'rtl');
+        if (langBtn) langBtn.textContent = 'English';
+        localStorage.setItem('siteLang', 'ar');
+    }
 }
 
-// Animated counters (using data-target)
+// Initial load – set language based on saved preference or default to Arabic
+(function() {
+    const savedLang = localStorage.getItem('siteLang') || 'ar';
+    applyLanguage(savedLang);
+})();
+
+// Toggle button listener
+if (langBtn) {
+    langBtn.addEventListener('click', function() {
+        const currentLang = html.getAttribute('lang');
+        applyLanguage(currentLang === 'ar' ? 'en' : 'ar');
+    });
+}
+
+// ----- Animated counters (using data-target) -----
 function animateCounter(el, start, end, duration) {
     let current = start;
     const stepTime = Math.abs(Math.floor(duration / (end - start)));
