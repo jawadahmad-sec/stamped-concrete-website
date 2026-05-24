@@ -1,4 +1,17 @@
-// Hamburger menu toggle
+// ========== Google Analytics (GA4) ==========
+(function() {
+    var script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XZWLTLCJEX';
+    script.async = true;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XZWLTLCJEX');
+})();
+
+// ========== Hamburger menu ==========
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 if (hamburger && navLinks) {
@@ -7,10 +20,10 @@ if (hamburger && navLinks) {
     });
 }
 
-// AOS init
+// ========== AOS init ==========
 AOS.init({ duration: 800, once: true });
 
-// Swiper slider
+// ========== Swiper slider ==========
 const swiper = new Swiper('.hero-slider', {
     loop: true,
     autoplay: { delay: 4000 },
@@ -18,7 +31,7 @@ const swiper = new Swiper('.hero-slider', {
     navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
 });
 
-// ----- Language Toggle (bulletproof) -----
+// ========== Language Toggle ==========
 const langBtn = document.getElementById('lang-toggle');
 const html = document.documentElement;
 
@@ -38,13 +51,12 @@ function applyLanguage(lang) {
     }
 }
 
-// Initial load – set language based on saved preference or default to Arabic
+// Initial language
 (function() {
     const savedLang = localStorage.getItem('siteLang') || 'ar';
     applyLanguage(savedLang);
 })();
 
-// Toggle button listener
 if (langBtn) {
     langBtn.addEventListener('click', function() {
         const currentLang = html.getAttribute('lang');
@@ -52,7 +64,7 @@ if (langBtn) {
     });
 }
 
-// ----- Animated counters (using data-target) -----
+// ========== Animated counters ==========
 function animateCounter(el, start, end, duration) {
     let current = start;
     const stepTime = Math.abs(Math.floor(duration / (end - start)));
